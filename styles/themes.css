@@ -4,3 +4,39 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+
+:root.theme-dark {
+  --main-font-family: 'Inter';
+  --second-font-family: 'PressStart2P';
+  --wght: 465;
+  --title-wght: 785;
+  --themes-main-color: #00CC14;
+  --themes-background: #000;
+  --color-of-animated-button: #00CC14;
+  --background-image:
+    repeating-linear-gradient(90deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #007f0c 0%, #004306 100%);
+  --section-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);   
+  --contour-heart-color: #00CC14;
+  --sparks-heart-color: #FF0000;
+}
+
+.theme-light {
+  --main-font-family: 'Inter';
+  --second-font-family: 'PressStart2P';
+  --wght: 400;
+  --title-wght: 700;
+  --wght-bold-light: 700;
+  --themes-main-color: #000;
+  --themes-background: #FFF;
+  --color-of-animated-button: #fff;
+  --background-image:
+      repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+      repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+      linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --section-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
+  --contour-heart-color: black;
+  --sparks-heart-color: #FF0000;
+}

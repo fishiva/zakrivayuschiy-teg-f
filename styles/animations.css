@@ -12,3 +12,94 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+
+@keyframes strelka {
+  from {
+    left: -14px;
+  }
+  to {
+    left: -18px;
+  }
+}
+
+.like-icon {
+    transform-origin: center;
+    cursor: pointer;
+}
+
+
+.like-icon .core {
+    fill: transparent;
+    transition: fill 0.3s 0.03s linear ;
+}
+
+.like-icon:hover .core {
+    fill: var(--black-heart-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon .main-body {
+    fill: transparent;
+    transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body{
+    fill: var(--black-heart-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+    fill: var(--red-heart-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+    fill: var(--red-heart-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon .sparks {
+    opacity: 0;
+}
+
+.like-icon.is-liked {
+    animation: heart-scale 0.3s 0.1s alternate ease-in;
+}
+
+@keyframes heart-scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.5;
+    }
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--red-heart-color);
+    transition: fill 0.3s 0.1s linear;
+}
+
+.like-icon.is-liked .sparks {
+    animation: heart-sparks 0.3s 0.3s  1  alternate ease-in;
+}
+
+@keyframes heart-sparks {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--red-heart-color);
+    transition: fill 0.3s 0.1s linear;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--red-heart-color);
+    transition: fill 0.3 linear;
+}
