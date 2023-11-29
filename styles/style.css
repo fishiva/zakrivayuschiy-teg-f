@@ -44,7 +44,7 @@
 
 .header {
   --header-padding-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
-  padding: var(--header-padding-top) 0 20px; 
+  padding: var(--header-padding-top) 0 20px;
   font-family: var(--second-font-family);
   display: flex;
   flex-direction: column;
@@ -405,7 +405,6 @@
   inline-size: 100%;
   padding: 9px 17px;
   text-transform: uppercase;
-  background: transparent;
   border: 2px solid var(--themes-main-color);
   box-shadow: 2px 2px 0 0 black;
 }
