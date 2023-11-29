@@ -206,7 +206,7 @@
 }
 
 .card__image_blur {
-  filter: blur(5px);
+  filter: blur(2px);
 }
 
 .card__image_inversion {
@@ -214,7 +214,7 @@
 }
 
 .card__image_grayscale {
-  filter: grayscale(75%);
+  filter: grayscale(60%);
 }
 
 .card__image_sepia {
@@ -222,7 +222,7 @@
 }
 
 .card__image_saturation {
-  filter: saturate(300%);
+  filter: saturate(140%);
 }
 
 .card__image_hue-rotate {
@@ -230,7 +230,7 @@
 }
 
 .card__image_multy-filter {
-  filter: saturate(300%) invert(1) hue-rotate(90deg) blur(2px) grayscale(75%);
+  filter: saturate(100%) invert(0) hue-rotate(90deg) blur(1.5px) grayscale(50%);
 }
 
 .card-text-part {
@@ -253,12 +253,16 @@
   padding: 0 25px 25px;
   display: flex;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 8px;
 }
 
 .card__icon-button {
-  max-block-size: 36px;
-  max-inline-size: 36px;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 36px;
+  inline-size: 36px;
+  padding: 0;
   transition: border 0.3s ease;
   border: 2px solid transparent;
   background-color: transparent;
@@ -270,6 +274,7 @@
 
 .card__icon-button:focus-visible {
   border:  2px solid var(--themes-main-color);
+  transition: border 0.3s ease;
 }
 
 .card__like-button {
@@ -326,6 +331,7 @@
   justify-content: center;
   gap: 8px;
   border: 2px solid var(--themes-main-color, #000);
+  background-color: var(--themes-background);
   padding: 15px;
   inline-size: 339px;
   overflow: hidden;
@@ -356,6 +362,7 @@
   text-transform: uppercase;
   max-inline-size: 357px;
   border: 2px solid var(--themes-main-color);
+  background-color: var(--themes-background);
   padding: 32px 32px 32px 31px;
 }
 
@@ -378,6 +385,7 @@
 .popup_icon {
   block-size: 39px;
   inline-size: 89px;
+  color: var(--themes-main-color);
 }
 
 .popup_title {
