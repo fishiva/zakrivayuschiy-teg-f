@@ -16,5 +16,6 @@
   --section-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
   --black-heart-color: black;
   --red-heart-color: #FF0000;
+  --header_title_size: clamp:(0.875rem, 0.677rem + 0.845vw, 1.438rem);
 
 }

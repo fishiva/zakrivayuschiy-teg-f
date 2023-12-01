@@ -35,13 +35,6 @@
   margin: auto;
 }
 
-@media (width <=375px) {
-  .page__section {
-    inline-size: 100%;
-    margin: auto;
-  }
-}
-
 .header {
   --header-padding-top: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
   padding: var(--header-padding-top) 0 20px;
@@ -68,11 +61,20 @@
   color: var(--themes-main-color, #000);
   font-family: var(--second-font-family);
   font-size: 23px;
-  font-style: normal;
   font-weight: var(--wght);
-  line-height: normal;
   text-transform: uppercase;
   margin-bottom: 25px;
+}
+
+@media (width <=375px) {
+  .page__section {
+    inline-size: 100%;
+    margin: auto;
+  }
+
+  .header_title {
+    font-size: 14px;
+  }
 }
 
 .header__theme-menu {
@@ -126,7 +128,7 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  width: 100%;
+  scale: 1;
 }
 
 .theme-menu__button:disabled {
@@ -139,6 +141,7 @@
   position: absolute;
   animation: strelka 0.5s infinite alternate ease-in-out;
   left: -14px;
+  top: -1px;
 
 }
 
@@ -172,6 +175,8 @@
 
 .card__label {
   position: absolute;
+  top: 27px;
+  right: 25px;
   mix-blend-mode: hard-light;
   font-family: var(--second-font-family);
   font-size: 14px;
@@ -188,7 +193,14 @@
     1px 0 0 #fff, 
     0 -1px 0 #fff;
 }
-/* ПОМЕНЯТЬ БЕЛЫЙ ЦВЕТ НА ПЕРЕМЕННУЮ С БЕЛЫМ ЦВЕТОМ */
+
+@media (width <= 375px) {
+  .card__label {
+    top: 23px;
+    right: 11px;
+  }
+}
+
 @supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .card__label {
       -webkit-text-stroke: 1px #fff;
@@ -253,6 +265,7 @@
   padding: 0 25px 25px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 8px;
 }
 
@@ -260,12 +273,13 @@
   display:  flex;
   justify-content: center;
   align-items: center;
-  block-size: 36px;
-  inline-size: 36px;
+  block-size: 38px;
+  inline-size: 38px;
   padding: 0;
   transition: border 0.3s ease;
   border: 2px solid transparent;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -274,19 +288,29 @@
 
 .card__icon-button:focus-visible {
   border:  2px solid var(--themes-main-color);
-  transition: border 0.3s ease;
+  /* transition: border 0.3s ease; */
 }
 
-.card__like-button {
+.button {
   position: relative;
   border: 2px solid var(--themes-main-color, #000);
   background: transparent;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card__like-button {
+  /* position: relative;
+  border: 2px solid var(--themes-main-color, #000); */
+  /* background: transparent; */
   max-block-size: 38px;
   /* max-inline-size: 130px; */
   padding: 9px 17px;
   inline-size: 130px;
-  overflow: hidden;
-  transition: border 0.3s ease;
+  /* overflow: hidden; */
+  transition: box-shadow 0.3s ease;
+  /* cursor: pointer;  */
 }
 
 .card__like-button:focus {
@@ -294,7 +318,7 @@
 }
 
 .card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 0 black;
+  box-shadow: 2px 2px 0 0 var(--themes-main-color);
 }
 
 .button_hover_animation::before {
@@ -325,16 +349,17 @@
 
 .button_floppy {
   margin: 0 34.5px;
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 2px solid var(--themes-main-color, #000);
+  /* border: 2px solid var(--themes-main-color, #000); */
   background-color: var(--themes-background);
   padding: 15px;
   inline-size: 339px;
-  overflow: hidden;
+  /* overflow: hidden;
+  cursor: pointer; */
 }
 
 .button_floppy:focus {
@@ -366,14 +391,6 @@
   padding: 32px 32px 32px 31px;
 }
 
-.popup:focus {
-  outline: none;
-}
-
-.popup:focus-visible {
-  box-shadow: 2px 2px 0 var(--themes-main-color);
-}
-
 .popup_content {
   display: flex;
   align-items: center;
@@ -397,21 +414,29 @@
   text-transform: uppercase;
 }
 
-.popup_button_ok {
-  position: relative;
+.popup_button {
+  /* position: relative;
   overflow: hidden;
-  background: transparent;
+  background: transparent; */
   block-size: 100%;
   inline-size: 100%;
   padding: 9px 17px;
   text-transform: uppercase;
-  border: 2px solid var(--themes-main-color);
-  box-shadow: 2px 2px 0 0 black;
+  /* border: 2px solid var(--themes-main-color); */
+  /* cursor: pointer; */
 }
 
+.popup_button:focus {
+  outline: none;
+}
+
+.popup_button:focus-visible {
+  box-shadow: 2px 2px 0 var(--themes-main-color);
+}
+
+
 .popup::backdrop {
-  background-color: var(--themes-main-color);
-  opacity: 0.75;
+  background-color: rgb(0, 0, 0, 0.75);
 }
 
 @media (width <= 375px) {
@@ -419,9 +444,6 @@
     width: 340px;
     padding: 32px 40px;
   }
-}
-
-@media (width <= 375px) {
   .card {
     inline-size: clamp(20rem, 0rem + 100vw, 23.438rem);
   }
@@ -436,7 +458,7 @@
 
   .button_floppy {
     flex-direction: column;
-    inline-size: clamp(18.75rem, 4.568rem + 70.909vw, 21.188rem);
+    inline-size: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
   }
 
   .svg_image {
