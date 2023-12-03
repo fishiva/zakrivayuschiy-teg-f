@@ -226,7 +226,6 @@
 }
 
 .card__image_sepia {
-
   filter: sepia(80%);
 }
 
